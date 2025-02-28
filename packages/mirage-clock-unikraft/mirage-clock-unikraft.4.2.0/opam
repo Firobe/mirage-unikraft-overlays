@@ -1,0 +1,29 @@
+opam-version: "2.0"
+maintainer: "fabrice@tarides.com"
+authors: ["Fabrice Buoro" "Samuel Hym"]
+license: "ISC"
+tags: "org:mirage"
+homepage: "https://github.com/mirage/mirage-clock"
+doc: "https://mirage.github.io/mirage-clock/"
+bug-reports: "https://github.com/mirage/mirage-clock/issues"
+synopsis: "Unikraft-based implementation for the MirageOS Clock interface"
+description: """
+The Unikraft implementation of the MirageOS Clock interface reuse Unix Clock
+implementation.
+"""
+depends: [
+  "ocaml" {>= "5.2.0"}
+  "dune" {>= "2.8"}
+  "dune-configurator"
+  "mirage-clock" {= version}
+]
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name] {with-test}
+]
+dev-repo: "git+https://github.com/mirage/mirage-clock.git"
+url {
+    src:
+    "https://github.com/fabbing/mirage-clock/archive/refs/heads/unikraft.zip"
+}
