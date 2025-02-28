@@ -22,7 +22,7 @@ build: [
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name] {with-test}
 ]
-dev-repo: "git+https://github.com/mirage/mirage-clock.git"
+dev-repo: "git+https://github.com/fabbing/mirage-clock.git"
 url {
     src:
     "https://github.com/fabbing/mirage-clock/archive/refs/heads/unikraft.zip"
