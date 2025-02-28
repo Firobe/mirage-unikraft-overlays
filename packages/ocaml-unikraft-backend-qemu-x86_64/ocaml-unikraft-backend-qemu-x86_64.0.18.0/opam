@@ -1,0 +1,69 @@
+opam-version: "2.0"
+name: "ocaml-unikraft-backend-qemu-x86_64"
+maintainer: "samuel@tarides.com"
+homepage: "https://github.com/shym/ocaml-unikraft/"
+bug-reports: "https://github.com/shym/ocaml-unikraft/issues"
+version: "0.18.0"
+synopsis: "QEMU/x86_64 Unikraft backend for OCaml"
+authors: ["Samuel Hym" "Unikraft contributors"]
+license: ["MIT" "BSD-3-Clause" "GPL-2.0-only"]
+depends: [
+  "unikraft" {= version}
+]
+depopts: [
+  "ocaml-unikraft-option-debug"
+  "ocaml-unikraft-option-lwip"
+  "ocaml-unikraft-option-ocaml-net-stack"
+]
+build: [
+  [
+    make
+    "-j%{jobs}%"
+    "UNIKRAFT=%{lib}%/unikraft"
+    "OCUKPLAT=qemu"
+    "OCUKARCH=x86_64"
+    "OCUKEXTLIBS=musl"
+    "OCUKEXTLIBS+=lwip" {ocaml-unikraft-option-lwip:installed}
+    "OCUKCONFIGOPTS+=debug" {ocaml-unikraft-option-debug:installed}
+    "%{name}%.install"
+  ]
+]
+url {
+    src: "https://github.com/shym/ocaml-unikraft/archive/refs/heads/dev.tar.gz"
+}
+extra-source "lib-lwip.tar.gz" {
+  src:
+    "https://github.com/unikraft/lib-lwip/archive/refs/tags/RELEASE-0.18.0.tar.gz"
+  checksum:
+    "sha256=f785f9523e27704cf86050c5d8108ffbc45f8bdf6dccacbf5dd6f3dfcadbdb77"
+}
+extra-source "lib-musl.tar.gz" {
+  src:
+    "https://github.com/unikraft/lib-musl/archive/refs/tags/RELEASE-0.18.0.tar.gz"
+  checksum:
+    "sha256=b51afee0227c0c8c419dd001fb6b6f57b529e5cadcd437afdd05e2e8667a1e2e"
+}
+extra-source "patches/lib-musl/main-tsd.patch" {
+  src:
+    "https://github.com/shym/lib-musl/commit/c6fdfa79e23e6d52df2c2d28e4eb13e91b16ad4c.patch"
+  checksum:
+    "sha256=9b87cbf0743492e6949de61af6423b463031da8b14b799a775c34886cabffd28"
+}
+extra-source "patches/lib-musl/arm64.patch" {
+  src:
+    "https://github.com/shym/lib-musl/commit/ecae7ade7bcf7e0fb7e869225f6db1043d3653bf.patch"
+  checksum:
+    "sha256=d83043f534a8da4f0133f4fbde0d78bc3a5d996ca6f7fc91b42ccf2874515514"
+}
+extra-source "lwip-UNIKRAFT-2_1_x.zip" {
+  src:
+    "https://github.com/unikraft/fork-lwip/archive/refs/heads/UNIKRAFT-2_1_x.zip"
+  checksum:
+    "sha256=1cf15ac8a70946f49327cfa4bc6923555b8c4ceeb11e4dc4f20e530b674403af"
+}
+extra-source "musl-1.2.3.tar.gz" {
+  src: "https://www.musl-libc.org/releases/musl-1.2.3.tar.gz"
+  checksum:
+    "sha256=7d5b0b6062521e4627e099e4c9dc8248d32a30285e959b7eecaa780cf8cfd4a4"
+}
+
