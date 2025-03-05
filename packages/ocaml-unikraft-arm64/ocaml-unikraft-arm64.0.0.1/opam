@@ -1,14 +1,14 @@
 opam-version: "2.0"
 name: "ocaml-unikraft-arm64"
-maintainer: "samuel@tarides.com"
-homepage: "https://github.com/shym/ocaml-unikraft/"
-bug-reports: "https://github.com/shym/ocaml-unikraft/issues"
 version: "0.0.1"
 synopsis: "OCaml cross-compiler to the freestanding Unikraft arm64 backends"
 description:
   "This package provides a OCaml cross-compiler, suitable for linking with a Unikraft arm64 unikernel."
+maintainer: "samuel@tarides.com"
 authors: "Samuel Hym"
 license: ["MIT" "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"]
+homepage: "https://github.com/shym/ocaml-unikraft/"
+bug-reports: "https://github.com/shym/ocaml-unikraft/issues"
 depends: [
   "ocaml" {= "5.3.0"}
   "ocaml-unikraft-toolchain-arm64"
@@ -17,17 +17,16 @@ depends: [
   "conf-git" {build}
 ]
 build: [
-  [
-    make
-    "-j%{jobs}%"
-    "prefix=%{prefix}%"
-    "BIN=%{bin}%"
-    "LIB=%{lib}%"
-    "SHARE=%{share}%"
-    "OCUKARCH=arm64"
-    "%{name}%.install"
-  ]
+  make
+  "-j%{jobs}%"
+  "prefix=%{prefix}%"
+  "BIN=%{bin}%"
+  "LIB=%{lib}%"
+  "SHARE=%{share}%"
+  "OCUKARCH=arm64"
+  "%{name}%.install"
 ]
 url {
-    src: "https://github.com/shym/ocaml-unikraft/archive/refs/heads/dev.tar.gz"
+  src:
+    "https://github.com/shym/ocaml-unikraft/archive/92a5db35b689b553d6bca4d2b5154493d1e3e90c.tar.gz"
 }

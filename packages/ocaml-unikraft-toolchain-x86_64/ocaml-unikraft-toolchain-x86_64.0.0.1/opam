@@ -1,28 +1,28 @@
 opam-version: "2.0"
 name: "ocaml-unikraft-toolchain-x86_64"
-maintainer: "samuel@tarides.com"
-homepage: "https://github.com/shym/ocaml-unikraft/"
-bug-reports: "https://github.com/shym/ocaml-unikraft/issues"
 version: "0.0.1"
 synopsis:
   "C toolchain to build an OCaml cross-compiler to the freestanding Unikraft x86_64 backends"
 description:
   "This package provides a C toolchain to build an OCaml cross-compiler, suitable for linking with a Unikraft x86_64 unikernel."
+maintainer: "samuel@tarides.com"
 authors: "Samuel Hym"
 license: "MIT"
+homepage: "https://github.com/shym/ocaml-unikraft/"
+bug-reports: "https://github.com/shym/ocaml-unikraft/issues"
 depends: [
-  "ocaml-unikraft-backend-qemu-x86_64" | "ocaml-unikraft-backend-firecracker-x86_64"
+  "ocaml-unikraft-backend-qemu-x86_64" |
+  "ocaml-unikraft-backend-firecracker-x86_64"
 ]
 build: [
-  [
-    make
-    "-j%{jobs}%"
-    "LIB=%{lib}%"
-    "SHARE=%{share}%"
-    "OCUKARCH=x86_64"
-    "%{name}%.install"
-  ]
+  make
+  "-j%{jobs}%"
+  "LIB=%{lib}%"
+  "SHARE=%{share}%"
+  "OCUKARCH=x86_64"
+  "%{name}%.install"
 ]
 url {
-    src: "https://github.com/shym/ocaml-unikraft/archive/refs/heads/dev.tar.gz"
+  src:
+    "https://github.com/shym/ocaml-unikraft/archive/92a5db35b689b553d6bca4d2b5154493d1e3e90c.tar.gz"
 }

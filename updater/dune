@@ -1,0 +1,4 @@
+(executable
+ (name update)
+ (libraries opam-format cmdliner logs logs.fmt bos uri git git-unix lwt lwt.unix
+            mirage-crypto-rng.unix))
