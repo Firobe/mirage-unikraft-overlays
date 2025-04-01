@@ -1,0 +1,48 @@
+opam-version: "2.0"
+synopsis:
+  "The base MirageOS runtime library, part of every MirageOS unikernel"
+description:
+  "A bundle of useful runtime functions for applications built with MirageOS"
+maintainer: ["anil@recoil.org" "thomas@gazagnaire.org"]
+authors: [
+  "Thomas Gazagnaire"
+  "Anil Madhavapeddy"
+  "Gabriel Radanne"
+  "Mindy Preston"
+  "Thomas Leonard"
+  "Nicolas Ojeda Bar"
+  "Dave Scott"
+  "David Kaloper"
+  "Hannes Mehnert"
+  "Richard Mortier"
+]
+license: "ISC"
+tags: ["org:mirage" "org:xapi-project"]
+homepage: "https://github.com/mirage/mirage"
+doc: "https://mirage.github.io/mirage/"
+bug-reports: "https://github.com/mirage/mirage/issues/"
+depends: [
+  "ocaml" {>= "4.13.0"}
+  "dune" {>= "2.9.0"}
+  "logs" {>= "0.7.0"}
+  "lwt" {>= "4.0.0"}
+  "ipaddr" {>= "5.5.0"}
+  "cmdliner" {>= "1.2.0"}
+]
+conflicts: [
+  "result" {< "1.5"}
+  "ppxlib" {= "0.29.0"}
+]
+available: opam-version >= "2.1.0"
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+dev-repo: "git+https://github.com/mirage/mirage.git"
+url {
+  src:
+    "https://github.com/fabbing/mirage/archive/f117cccd4abeb5e2e7946e2bb3e3cccdb4f78bc1.tar.gz"
+}
+x-commit-hash: "c49e60fda7bd7f917bc4bf46281ea3961d00a4e7"
+x-maintenance-intent: ["(latest)"]

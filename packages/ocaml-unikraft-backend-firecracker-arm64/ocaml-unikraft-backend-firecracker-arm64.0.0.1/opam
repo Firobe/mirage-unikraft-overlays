@@ -28,7 +28,7 @@ build: [
 ]
 url {
   src:
-    "https://github.com/shym/ocaml-unikraft/archive/92a5db35b689b553d6bca4d2b5154493d1e3e90c.tar.gz"
+    "https://github.com/shym/ocaml-unikraft/archive/cbe40a092353debdedee2118aeeff3cde86a24f3.tar.gz"
 }
 extra-source "lib-lwip.tar.gz" {
   src:

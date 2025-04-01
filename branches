@@ -4,6 +4,6 @@ fabbing/mirage-ptime main
 fabbing/mirage-clock unikraft
 fabbing/mirage-unikraft_ main
 shym/ocaml-unikraft dev
-fabbing/mirage unikraft_target
+fabbing/mirage unikraft_4.9.0
 fabbing/mirage-net-unikraft main
 fabbing/mirage-block-unikraft main
