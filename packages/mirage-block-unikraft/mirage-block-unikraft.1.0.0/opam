@@ -28,5 +28,5 @@ build: [
 dev-repo: "git+https://github.com/fabbing/mirage-block-unikraft.git"
 url {
   src:
-    "https://github.com/fabbing/mirage-block-unikraft/archive/0eab43ad7d162853cc1e0800a6a03bf595ca86c1.tar.gz"
+    "https://github.com/fabbing/mirage-block-unikraft/archive/9be17d523bdd8e410372675da73db5e4c46d055b.tar.gz"
 }

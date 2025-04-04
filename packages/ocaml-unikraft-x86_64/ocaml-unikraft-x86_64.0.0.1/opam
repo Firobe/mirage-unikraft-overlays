@@ -26,7 +26,8 @@ build: [
   "OCUKARCH=x86_64"
   "%{name}%.install"
 ]
+install: [make "install-ocaml"]
 url {
   src:
-    "https://github.com/shym/ocaml-unikraft/archive/92a5db35b689b553d6bca4d2b5154493d1e3e90c.tar.gz"
+    "https://github.com/shym/ocaml-unikraft/archive/37002798b86fe1b61dc58830cc93027820741b21.tar.gz"
 }
