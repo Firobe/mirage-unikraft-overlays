@@ -15,5 +15,5 @@ conflict-class: "ocaml-unikraft-default"
 build: [make "prefix=%{prefix}%" "OCUKARCH=arm64" "%{name}%.install"]
 url {
   src:
-    "https://github.com/shym/ocaml-unikraft/archive/2ccbc2cffd9e20c4d86bdf83aa77fd0e2cb1bfdd.tar.gz"
+    "https://github.com/shym/ocaml-unikraft/archive/99580b5d9eb50d29d9a2784514a3412631552cb7.tar.gz"
 }
