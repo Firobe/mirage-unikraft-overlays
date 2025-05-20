@@ -1,11 +1,11 @@
 opam-version: "2.0"
-name: "ocaml-unikraft-backend-qemu"
 maintainer: "samuel@tarides.com"
-homepage: "https://github.com/shym/ocaml-unikraft/"
-bug-reports: "https://github.com/shym/ocaml-unikraft/issues"
-version: "0.0.1"
+homepage: "https://github.com/mirage/ocaml-unikraft/"
+dev-repo: "git+https://github.com/mirage/ocaml-unikraft.git"
+bug-reports: "https://github.com/mirage/ocaml-unikraft/issues"
+tags: "org:mirage"
 synopsis:
-  "Virtual package to ensure the QEMU Unikraft backend is installed for the default cross-compiler"
+  "Virtual package to ensure the QEMU Unikraft backend is installed for the default cross compiler"
 description:
   "This virtual package ensures that the QEMU backend is installed for the default `unikraft` ocamlfind cross toolchain."
 authors: "Samuel Hym"
@@ -15,3 +15,5 @@ depends: [
   ("ocaml-unikraft-default-x86_64" & "ocaml-unikraft-backend-qemu-x86_64") |
   ("ocaml-unikraft-default-arm64" & "ocaml-unikraft-backend-qemu-arm64")
 ]
+available: os = "linux"
+x-maintenance-intent: ["(latest)"]
