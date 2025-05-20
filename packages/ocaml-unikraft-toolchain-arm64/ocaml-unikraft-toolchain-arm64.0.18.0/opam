@@ -4,28 +4,22 @@ homepage: "https://github.com/mirage/ocaml-unikraft/"
 dev-repo: "git+https://github.com/mirage/ocaml-unikraft.git"
 bug-reports: "https://github.com/mirage/ocaml-unikraft/issues"
 tags: "org:mirage"
-synopsis: "QEMU/x86_64 Unikraft backend for OCaml"
-authors: ["Samuel Hym" "Unikraft contributors"]
-license: ["MIT" "BSD-3-Clause" "GPL-2.0-only"]
+synopsis:
+  "C toolchain to build an OCaml cross compiler to the freestanding Unikraft arm64 backends"
+description:
+  "This package provides a C toolchain to build an OCaml cross compiler, suitable for linking with a Unikraft arm64 unikernel."
+authors: "Samuel Hym"
+license: "MIT"
 depends: [
-  "unikraft" {= version}
-  "unikraft-musl" {= version}
-  "conf-x86_64-linux-gnu-gcc" {arch != "x86_64"}
-]
-depopts: [
-  "ocaml-unikraft-option-debug"
+  "ocaml-unikraft-backend-qemu-arm64" | "ocaml-unikraft-backend-firecracker-arm64"
 ]
 build: [
   [
     make
     "-j%{jobs}%"
-    "UNIKRAFT=%{unikraft:lib}%"
-    "UNIKRAFTMUSL=%{unikraft-musl:lib}%"
-    "OCUKPLAT=qemu"
-    "OCUKARCH=x86_64"
-    "OCUKEXTLIBS=musl"
-    "OCUKCONFIGOPTS+=debug" {ocaml-unikraft-option-debug:installed}
-    "UK_CFLAGS=-std=gnu11"
+    "LIB=%{lib}%"
+    "SHARE=%{share}%"
+    "OCUKARCH=arm64"
     "%{name}%.install"
   ]
 ]

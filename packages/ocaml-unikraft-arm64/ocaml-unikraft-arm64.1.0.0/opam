@@ -4,31 +4,34 @@ homepage: "https://github.com/mirage/ocaml-unikraft/"
 dev-repo: "git+https://github.com/mirage/ocaml-unikraft.git"
 bug-reports: "https://github.com/mirage/ocaml-unikraft/issues"
 tags: "org:mirage"
-synopsis: "QEMU/arm64 Unikraft backend for OCaml"
-authors: ["Samuel Hym" "Unikraft contributors"]
-license: ["MIT" "BSD-3-Clause" "GPL-2.0-only"]
+synopsis: "OCaml cross compiler to the freestanding Unikraft arm64 backends"
+description:
+  "This package provides an OCaml cross compiler, suitable for linking with a Unikraft arm64 unikernel."
+authors: "Samuel Hym"
+license: ["MIT" "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"]
 depends: [
-  "unikraft" {= version}
-  "unikraft-musl" {= version}
-  "conf-aarch64-linux-gnu-gcc" {arch != "arm64"}
-]
-depopts: [
-  "ocaml-unikraft-option-debug"
+  "ocaml" {= "5.3.0"}
+  "ocaml-unikraft-toolchain-arm64"
+  "ocamlfind"
+  "ocaml-src" {build}
+  "conf-git" {build}
 ]
 build: [
   [
     make
     "-j%{jobs}%"
-    "UNIKRAFT=%{unikraft:lib}%"
-    "UNIKRAFTMUSL=%{unikraft-musl:lib}%"
-    "OCUKPLAT=qemu"
+    "prefix=%{prefix}%"
+    "BIN=%{bin}%"
+    "LIB=%{lib}%"
+    "SHARE=%{share}%"
     "OCUKARCH=arm64"
-    "OCUKEXTLIBS=musl"
-    "OCUKCONFIGOPTS+=debug" {ocaml-unikraft-option-debug:installed}
-    "UK_CFLAGS=-std=gnu11"
     "%{name}%.install"
   ]
 ]
+install: [
+  [make "install-ocaml"]
+]
+conflicts: ["ocaml-option-bytecode-only"]
 url {
   src:
     "https://github.com/mirage/ocaml-unikraft/archive/refs/tags/v1.0.0.tar.gz"
