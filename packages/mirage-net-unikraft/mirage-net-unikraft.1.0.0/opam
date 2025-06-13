@@ -6,9 +6,9 @@ maintainer: "martin@lucina.net"
 authors: "Fabrice Buoro <fabrice@tarides.com>"
 license: "ISC"
 tags: "org:mirage"
-homepage: "https://github.com/fabbing/mirage-net-unikraft"
+homepage: "https://github.com/mirage/mirage-net-unikraft"
 doc: "https://mirage.github.io/mirage-net-unikraft/"
-bug-reports: "https://github.com/fabbing/mirage-net-unikraft/issues"
+bug-reports: "https://github.com/mirage/mirage-net-unikraft/issues"
 depends: [
   "ocaml" {>= "5.2.0"}
   "dune" {>= "2.0"}
@@ -16,7 +16,7 @@ depends: [
   "lwt" {>= "2.4.3"}
   "mirage-net" {>= "3.0.0"}
   "macaddr" {>= "4.0.0"}
-  "mirage-unikraft" {>= "0.0.0"}
+  "mirage-unikraft" {>= "1.0.0"}
   "logs" {>= "0.6.0"}
   "metrics"
   "fmt" {>= "0.8.7"}
@@ -26,8 +26,8 @@ build: [
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name] {with-test}
 ]
-dev-repo: "git+https://github.com/fabbing/mirage-net-unikraft.git"
+dev-repo: "git+https://github.com/mirage/mirage-net-unikraft.git"
 url {
   src:
-    "https://github.com/fabbing/mirage-net-unikraft/archive/4f600af7c3e60dcea26ff81faf0b66fabfe32ea9.tar.gz"
+    "https://github.com/mirage/mirage-net-unikraft/archive/c5696284806eefe7c0802266198b09a486716e73.tar.gz"
 }

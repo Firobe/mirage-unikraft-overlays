@@ -60,5 +60,5 @@ build: [
 dev-repo: "git+https://github.com/mirage/mirage.git"
 url {
   src:
-    "https://github.com/fabbing/mirage/archive/9c8cff0e1c28ec6379e05470537b73c8cad89539.tar.gz"
+    "https://github.com/fabbing/mirage/archive/e32ca9cacfeddb0ff6bb61b7f1d1ba226b246a1d.tar.gz"
 }
