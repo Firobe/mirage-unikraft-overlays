@@ -10,3 +10,9 @@ $ opam install mirage ocaml-unikraft-backend-qemu ocaml-unikraft-x86_64
 $ mirage configure -t unikraft-qemu
 $ make
 ```
+
+## Changes from published packages
+
+- `ocaml-unikraft`
+  - removed `dev-repo` as a work-around until
+    [this bugfix for opam-monorepo](https://github.com/tarides/opam-monorepo/pull/415) is released
