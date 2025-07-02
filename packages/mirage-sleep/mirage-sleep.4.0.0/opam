@@ -32,6 +32,6 @@ build: [
 dev-repo: "git+https://github.com/mirage/mirage-sleep.git"
 url {
   src:
-    "https://github.com/fabbing/mirage-sleep/archive/5eef898e35849d45812e51573c041a6570697277.tar.gz"
+    "https://github.com/shym/mirage-sleep/archive/b0c7109b327b5013908e257af850b4c7a9c8f1c3.tar.gz"
 }
 x-maintenance-intent: ["(latest)"]

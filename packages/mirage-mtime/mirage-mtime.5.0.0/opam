@@ -28,6 +28,6 @@ build: [
 dev-repo: "git+https://github.com/mirage/mirage-mtime.git"
 url {
   src:
-    "https://github.com/fabbing/mirage-mtime/archive/5eef05fa5b2ff03473686b143a181ea3203e5d36.tar.gz"
+    "https://github.com/fabbing/mirage-mtime/archive/92ed97df220bcdf260785db36728b4b744e6eef7.tar.gz"
 }
 x-maintenance-intent: ["(latest)"]
